@@ -7,3 +7,37 @@
 <img width="959" height="515" alt="Capture d&#39;écran 2026-10-31 235948" src="https://github.com/user-attachments/assets/dc3b68f6-3650-4c41-b03f-8164dbf4ee95" />
 <img width="946" height="522" alt="Capture d&#39;écran 2026-11-01 000620" src="https://github.com/user-attachments/assets/54244baa-8fa9-4244-a48d-cfdef501b43a" />
 <img width="930" height="494" alt="Capture d&#39;écran 2026-11-01 001620" src="https://github.com/user-attachments/assets/831b995b-696f-4138-b8cf-035981327616" />
+## 1. Création et sélection de la base de données
+- **`CREATE DATABASE IF NOT EXISTS tp_mysql_db;`** : Crée la base de données nommée `tp_mysql_db` si elle n'existe pas déjà.
+- **`USE tp_mysql_db;`** : Sélectionne la base de données pour exécuter les requêtes suivantes à l'intérieur.
+
+---
+
+## 2. Création de la table `utilisateur`
+- **`id`** : Clé primaire (`PRIMARY KEY`) à incrémentation automatique (`AUTO_INCREMENT`).
+- **`nom`** : Champ texte pour le nom de l'utilisateur (50 caractères max, obligatoire `NOT NULL`).
+- **`email`** : Adresse e-mail unique (`UNIQUE`) et obligatoire (`NOT NULL`).
+- **`date_creation`** : Horodatage automatique réglé sur la date et l'heure actuelles (`DEFAULT CURRENT_TIMESTAMP`).
+
+---
+
+## 3. Insertion des données de test
+- Insertion de deux enregistrements d'essai (`Imane` et `Ahmed`) dans la table `utilisateur`.
+
+---
+
+## 4. Optimisation de la base de données
+- **`CREATE INDEX idx_email ON utilisateur(email);`** : Création d'un index sur la colonne `email` pour accélérer la recherche et améliorer les performances des requêtes SQL.
+
+---
+
+## 5. Gestion des utilisateurs et privilèges
+- **`CREATE USER ...`** : Création de l'utilisateur `admin_user` sur `localhost` avec le mot de passe `password123`.
+- **`GRANT ALL PRIVILEGES ...`** : Attribution de tous les privilèges sur la base de données `tp_mysql_db` à `admin_user`.
+- **`FLUSH PRIVILEGES;`** : Rechargement des privilèges pour appliquer les modifications immédiatement.
+
+---
+
+## 6. Affichage des résultats
+- **`SELECT * FROM utilisateur;`** : Récupération et affichage de toutes les données insérées dans la table `utilisateur`.
+-
